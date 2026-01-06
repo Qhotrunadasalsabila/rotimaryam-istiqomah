@@ -1,489 +1,181 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roti Maryam Istiqomah</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roti Maryam Istiqomah</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background-color: #f8f5f2;
-    }
-
-    /* NAVBAR */
-    .navbar {
-      background: linear-gradient(90deg, #a47149, #d2b48c);
-      padding: 10px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .logo-text {
-      color: #fff;
-      font-size: 20px;
-      font-weight: 600;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li {
-      margin-left: 14px;
-    }
-
-    .nav-menu li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .nav-menu li a:hover {
-      background-color: rgba(255,255,255,0.25);
-      color: #5c3a21;
-    }
-
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background-image: url("roti maryam.jpeg");
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-
-    .hero-text {
-      position: relative;
-      color: #fff;
-      max-width: 800px;
-      padding: 20px;
-    }
-
-    .hero-text h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .hero-text h4 {
-      font-size: 20px;
-      margin-bottom: 25px;
-    }
-
-    .btn-order {
-      background-color: #d2b48c;
-      color: #5c3a21;
-      padding: 12px 28px;
-      font-size: 17px;
-      font-weight: 600;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn-order:hover {
-      background-color: #a47149;
-      color: #fff;
-    }
-
-    /* ABOUT */
-  /* SECTION */
-.section-two {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 80px 10%;
-  background: linear-gradient(135deg, #f6efe9, #efe1d3);
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Quicksand',sans-serif;
+  background:#f8f5f2;
 }
 
-/* IMAGE */
-.section-image img {
-  width: 100%;
-  max-width: 520px;   /* DARI 420 → 520 */
-  border-radius: 22px;
-  box-shadow: 0 15px 40px rgba(90, 60, 40, 0.25);
-  transition: transform 0.4s ease;
+/* NAVBAR */
+.navbar{
+  background:linear-gradient(90deg,#a47149,#d2b48c);
+  padding:12px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;width:100%;
+  z-index:100;
+}
+.nav-left{display:flex;align-items:center;gap:10px}
+.logo-img{width:45px;height:45px;border-radius:50%}
+.logo-text{color:#fff;font-weight:600}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:15px;
+  margin:0;padding:0;
+}
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  padding:6px 12px;
+  border-radius:8px;
+}
+.nav-links a:hover{background:rgba(255,255,255,.3)}
+.hamburger{
+  display:none;
+  font-size:26px;
+  color:#fff;
+  cursor:pointer;
 }
 
-
-.section-image img:hover {
-  transform: scale(1.05);
-}
-.section-image {
-  flex: 1.2;
-}
-
-.section-text {
-  flex: 1;
-}
-
-.section-image img {
-  width: 100%;
-  max-width: 600px;
-}
-
-/* TEXT */
-.section-text {
-  background: #fffaf5;
-  padding: 35px;
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(120, 80, 50, 0.18);
-  color: #4a2f1b;
-  max-width: 560px;
-}
-
-.section-text h2 {
-  font-size: 2.2rem;
-  color: #6b3e26;
-  margin-bottom: 10px;
-}
-
-.section-text h4 {
-  color: #8b5a3c;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
-.section-text p {
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-/* PRODUCT INFO BOX */
-.product-info {
-  margin-top: 25px;
-  padding: 20px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #c89b6d, #a8744f);
-  color: #fff;
-  box-shadow: 0 10px 25px rgba(100, 60, 30, 0.25);
-}
-
-.product-info h3 {
-  margin-bottom: 10px;
-}
-
-/* ANIMATIONS */
-.fade-in-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  animation: fadeLeft 1.2s ease forwards;
-}
-
-.fade-in-right {
-  opacity: 0;
-  transform: translateX(60px);
-  animation: fadeRight 1.2s ease forwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+/* NAV RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:65px;
+    right:0;
+    width:100%;
+    background:#a47149;
+    flex-direction:column;
+    align-items:center;
+    display:none;
   }
+  .nav-links.active{display:flex}
+  .hamburger{display:block}
 }
 
-@keyframes fadeRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("roti maryam.jpeg") center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+.hero-text{
+  position:relative;
+  color:#fff;
+  text-align:center;
+}
+.btn-order{
+  background:#d2b48c;
+  color:#5c3a21;
+  padding:12px 28px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .section-image img {
-    max-width: 90%;
-  }
+/* ABOUT */
+.section-two{
+  display:flex;
+  gap:40px;
+  padding:100px 10%;
+  background:linear-gradient(135deg,#f6efe9,#efe1d3);
+}
+.section-image img{
+  width:100%;
+  max-width:520px;
+  border-radius:22px;
+}
+.section-text{
+  background:#fffaf5;
+  padding:35px;
+  border-radius:24px;
+}
+@media(max-width:900px){
+  .section-two{flex-direction:column}
 }
 
-
-    /* MENU */
-    .menu-section {
-      padding: 80px 20px;
-      background: #f3ebe0;
-      text-align: center;
-    }
-
-    .menu-section h1 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #5c3a21;
-    }
-
-    .menu-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .menu-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-      transition: 0.3s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .menu-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    .menu-card h3 {
-      margin-top: 15px;
-      font-size: 18px;
-      color: #5c3a21;
-    }
-
-    .menu-price {
-      margin-top: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #a47149;
-    }
-    .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+/* MENU */
+.menu-section{
+  padding:80px 20px;
+  background:#f3ebe0;
+  text-align:center;
+}
+.menu-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.menu-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 6px 15px rgba(0,0,0,.15);
+}
+.menu-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+.menu-card h3{margin:10px}
+.menu-price{
+  background:#7b4a2e;
+  color:#fff;
+  padding:10px;
+  font-weight:600;
 }
 
-.menu-card {
-  position: relative;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  cursor: pointer;
+/* TESTIMONI */
+.testimonial-section{
+  padding:80px 20px;
+  background:linear-gradient(135deg,#f6efe9,#efe1d3);
+  text-align:center;
+}
+.testimonial-track{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.testimonial-card{
+  width:260px;
+  background:#fffaf5;
+  padding:20px;
+  border-radius:18px;
 }
 
-.menu-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+/* FOOTER */
+#footer{
+  background:linear-gradient(135deg,#7b4a2e,#a9744f);
+  color:#fff;
+  padding:50px 20px;
+  text-align:center;
 }
-
-.menu-card h3 {
-  padding: 12px;
-  font-size: 18px;
-}
-
-/* HARGA DISEMBUNYIKAN */
-.menu-price {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(123, 74, 46, 0.9);
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 12px;
-  transform: translateY(100%);
-  transition: 0.3s ease;
-}
-
-/* MUNCUL SAAT HOVER / TAP */
-.menu-card:hover .menu-price,
-.menu-card:active .menu-price {
-  transform: translateY(0);
-}
-
-
-    /* TESTIMONI */
-    .testimonial-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #f6efe9, #efe1d3);
-  text-align: center;
-}
-
-.testimonial-section h2 {
-  font-size: 32px;
-  color: #5c3a21;
-  margin-bottom: 35px;
-}
-
-.testimonial-slider {
-  overflow: hidden;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.testimonial-track {
-  display: flex;
-  gap: 20px;
-  animation: slideTesti 25s linear infinite;
-}
-
-.testimonial-card {
-  min-width: 280px;
-  background: #fffaf5;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.stars {
-  color: #ffc107;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.testimonial-text {
-  font-style: italic;
-  margin-bottom: 12px;
-  color: #4a2f1b;
-}
-
-.buyer-name {
-  font-weight: 600;
-  color: #7b4a2e;
-}
-
-/* ANIMASI AUTO GESER */
-@keyframes slideTesti {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-60%);
-  }
-}
-
-/* HENTI SAAT DIHOVER */
-.testimonial-slider:hover .testimonial-track {
-  animation-play-state: paused;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .testimonial-card {
-    min-width: 240px;
-  }
-}
-
-
-    /* FOOTER */
-    #footer {
-  background: linear-gradient(135deg, #7b4a2e, #a9744f);
-  color: #fff;
-  padding: 50px 20px;
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
-}
-
-.footer-container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-#footer h3 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.footer-reason {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
-}
-
-.footer-reason li {
-  margin: 8px 0;
-  font-size: 16px;
-}
-
-.footer-social {
-  margin-bottom: 25px;
-}
-
-.footer-social a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  height: 45px;
-  margin: 0 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.footer-social a:hover {
-  background: #fff;
-  color: #7b4a2e;
-  transform: translateY(-5px);
-}
-
-.copyright {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-  </style>
+</style>
 </head>
 
 <body>
@@ -494,13 +186,16 @@
     <img src="logo.jpeg" class="logo-img">
     <span class="logo-text">Roti Maryam Istiqomah</span>
   </div>
-  <ul class="nav-menu">
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">Tentang</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#testimoni">Testimoni</a></li>
-    <li><a href="#footer">Footer</a></li>
+    <li><a href="#footer">Kontak</a></li>
   </ul>
+
+  <div class="hamburger" id="hamburger">☰</div>
 </nav>
 
 <!-- HOME -->
@@ -514,23 +209,20 @@
 
 <!-- ABOUT -->
 <section class="section-two" id="about">
-  <div class="section-image fade-in-left">
+  <div class="section-image">
     <img src="about update.jpeg" alt="Roti Maryam Istiqomah">
   </div>
-
-  <div class="section-text fade-in-right">
+  <div class="section-text">
     <h2>🍞 Roti Maryam Istiqomah</h2>
     <h4>Lembut di dalam, renyah di luar, nikmat di setiap gigitan</h4>
-
     <p>
       Dibuat dari <strong>bahan pilihan berkualitas</strong>, Roti Maryam Istiqomah
-      selalu diproduksi <strong>segar setiap hari</strong>, tanpa pengawet, dan
-      diolah dengan penuh ketelatenan.
+      selalu diproduksi <strong>segar setiap hari</strong>, tanpa pengawet,
+      dan diolah dengan penuh ketelatenan.
     </p>
-
     <p>
-      Cocok dinikmati kapan saja—sebagai camilan keluarga, teman minum teh,
-      hingga sajian spesial di berbagai acara 🎉
+      Cocok dinikmati kapan saja—sebagai camilan keluarga,
+      teman minum teh, hingga sajian spesial di berbagai acara 🎉
     </p>
 
     <div class="product-info">
@@ -538,8 +230,8 @@
       <p>
         Roti Maryam Istiqomah adalah roti maryam homemade dengan tekstur
         <strong>lembut, berlapis, dan harum</strong>.
-        Dibuat secara higienis dengan takaran pas,
-        menghasilkan rasa gurih khas yang bikin nagih 🤍
+        Dibuat secara higienis dengan takaran pas, menghasilkan rasa gurih khas
+        yang bikin nagih 🤍
       </p>
     </div>
   </div>
@@ -547,89 +239,45 @@
 
 <!-- MENU -->
 <section class="menu-section" id="menu">
-  <h1>Menu</h1>
-  <div class="menu-grid">
-    <div class="menu-card"><img src="original.jpeg"><h3>Original</h3><span class="menu-price">Rp 5.000</span></div>
-    <div class="menu-card"><img src="bs.coklat.jpeg"><h3>Coklat</h3><span class="menu-price">Rp 6.000</span></div>
-    <div class="menu-card"><img src="keju.jpeg"><h3>Keju</h3><span class="menu-price">Rp 6.000</span></div>
-    <div class="menu-card"><img src="coklat keju.jpeg"><h3>Coklat Keju</h3><span class="menu-price">Rp 7.000</span></div>
-    <div class="menu-card"><img src="kurma.jpeg"><h3>Kurma</h3><span class="menu-price">Rp 8.000</p></div>
-    <div class="menu-card"><img src="ayam.jpeg"><h3>Ayam</h3><span class="menu-price">Rp 8.000</span></div>
-    <div class="menu-card"><img src="rmckm.jpeg"><h3>coklat keju mozarella</h3><span class="menu-price">Rp 12.000</span></div>
-    <div class="menu-card"><img src="fg.jpeg"><h3>frozen original</h3><span class="menu-price">Rp 12.000</span></div>
-    <div class="menu-card"><img src="frozen coklat.jpeg"><h3>frozen coklat</h3><span class="menu-price">Rp 15.000</span></div>
-    <div class="menu-card"><img src="frozen keju.jpeg"><h3>frozen keju</h3><span class="menu-price">Rp 15.000</span></div>
-    <div class="menu-card"><img src="frozen keju coklat.jpeg"><h3>frozen keju coklat</h3><span class="menu-price"> Rp 18.000</span></div>
-    <div class="menu-card"><img src="frozen kurma.jpeg"><h3>frozen kurma</h3><span class="menu-price">Rp 18.000<span></div>
-  </div>
+<h1>Menu</h1>
+<div class="menu-grid">
+  <div class="menu-card"><img src="original.jpeg"><h3>Original</h3><div class="menu-price">Rp 5.000</div></div>
+  <div class="menu-card"><img src="bs.coklat.jpeg"><h3>Coklat</h3><div class="menu-price">Rp 6.000</div></div>
+  <div class="menu-card"><img src="keju.jpeg"><h3>Keju</h3><div class="menu-price">Rp 6.000</div></div>
+  <div class="menu-card"><img src="coklat keju.jpeg"><h3>Coklat Keju</h3><div class="menu-price">Rp 7.000</div></div>
+  <div class="menu-card"><img src="kurma.jpeg"><h3>Kurma</h3><div class="menu-price">Rp 8.000</div></div>
+  <div class="menu-card"><img src="ayam.jpeg"><h3>Ayam</h3><div class="menu-price">Rp 8.000</div></div>
+  <div class="menu-card"><img src="rmckm.jpeg"><h3>Coklat Keju Mozarella</h3><div class="menu-price">Rp 12.000</div></div>
+  <div class="menu-card"><img src="fg.jpeg"><h3>Frozen Original</h3><div class="menu-price">Rp 12.000</div></div>
+  <div class="menu-card"><img src="frozen coklat.jpeg"><h3>Frozen Coklat</h3><div class="menu-price">Rp 15.000</div></div>
+  <div class="menu-card"><img src="frozen keju.jpeg"><h3>Frozen Keju</h3><div class="menu-price">Rp 15.000</div></div>
+  <div class="menu-card"><img src="frozen keju coklat.jpeg"><h3>Frozen Keju Coklat</h3><div class="menu-price">Rp 18.000</div></div>
+  <div class="menu-card"><img src="frozen kurma.jpeg"><h3>Frozen Kurma</h3><div class="menu-price">Rp 18.000</div></div>
+</div>
 </section>
 
 <!-- TESTIMONI -->
 <section class="testimonial-section" id="testimoni">
-  <h2>💬 Testimoni Pelanggan</h2>
-
-  <div class="testimonial-slider">
-    <div class="testimonial-track">
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Enak banget, lembut dan gurih."</p>
-        <p class="buyer-name">Rina</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Langganan tiap minggu, keluarga suka."</p>
-        <p class="buyer-name">Ahmad</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Anak-anak selalu minta dibeliin."</p>
-        <p class="buyer-name">Dewi</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Frozen-nya praktis, rasanya tetap enak."</p>
-        <p class="buyer-name">Siti</p>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Harga ramah, kualitas mantap."</p>
-        <p class="buyer-name">Budi</p>
-      </div>
-
-    </div>
-  </div>
+<h2>💬 Testimoni Pelanggan</h2>
+<div class="testimonial-track">
+  <div class="testimonial-card">★★★★★<br>Enak banget<br><b>Rina</b></div>
+  <div class="testimonial-card">★★★★★<br>Langganan<br><b>Ahmad</b></div>
+  <div class="testimonial-card">★★★★★<br>Anak suka<br><b>Dewi</b></div>
+  <div class="testimonial-card">★★★★★<br>Frozen praktis<br><b>Siti</b></div>
+  <div class="testimonial-card">★★★★★<br>Harga ramah<br><b>Budi</b></div>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer id="footer">
-  <div class="footer-container">
-    <h3>Kenapa Pilih Roti Maryam Istiqomah? ❤️</h3>
-
-    <ul class="footer-reason">
-      <li>✔ Bahan berkualitas & halal</li>
-      <li>✔ Tanpa bahan pengawet</li>
-      <li>✔ Rasa konsisten & enak</li>
-      <li>✔ Cocok untuk semua usia</li>
-      <li>✔ Bisa pesan fresh atau frozen</li>
-    </ul>
-
-    <div class="footer-social">
-      <a href="#" class="wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" class="fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
-
-    <p class="copyright">
-      © 2025 <strong>Roti Maryam Istiqomah</strong> — Dibuat dengan cinta 🤎
-    </p>
-  </div>
+<p>© 2025 Roti Maryam Istiqomah</p>
 </footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+hamburger.onclick = () => navLinks.classList.toggle("active");
+</script>
 
 </body>
 </html>
