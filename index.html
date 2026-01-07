@@ -203,87 +203,143 @@
     }
 
     /* MENU */
-    .menu-section {
-      padding: 70px 20px;
-      background: linear-gradient(135deg, #f3e7d7, #e6d3b3);
-      text-align: center;
-      font-family: 'Quicksand', sans-serif;
+    .menu-section
+     { padding: 70px 20px;
+     background: linear-gradient(135deg, #f3e7d7, #e6d3b3);
+     text-align: center; 
+     font-family: 'Quicksand', sans-serif;
+     }
+      .menu-section h1
+       {
+       font-size: 34px;
+       color: #5a3e2b;
+       margin-bottom: 50px; 
+      }
+     .menu-grid 
+     { display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 30px;
+     max-width: 1200px;
+     margin: auto; 
     }
-
-    .menu-section h1 {
-      font-size: 34px;
-      color: #5a3e2b;
-      margin-bottom: 50px;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .menu-card {
-      background: #fffaf3;
-      border-radius: 18px;
-      padding: 18px;
-      position: relative;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    .menu-card 
+    { background: #fffaf3;
+       border-radius: 18px;
+        padding: 18px;
+       position: relative;
+       cursor: pointer;
+       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       transition: all 0.4s ease;
       overflow: hidden;
-    }
-
-    .menu-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 14px;
-    }
-
-    .menu-card h3 {
-      margin: 15px 0;
-      color: #5a3e2b;
-      font-size: 18px;
-    }
-
+        }
+       .menu-card img
+        {
+       width: 100%; 
+       height: 180px;
+        border-radius: 14px;
+       }
+      .menu-card h3 
+       {
+       margin: 15px 0;
+       color: #5a3e2b;
+       font-size: 18px; 
+                    }
     /* HARGA (hidden) */
-    .menu-price {
-      opacity: 0;
-      transform: translateY(10px);
-      background: #6b4a32;
-      color: #fff;
-      padding: 10px;
-      border-radius: 12px;
-      font-weight: bold;
-      transition: all 0.4s ease;
-    }
-
-    /* HOVER / CLICK */
-    .menu-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .menu-card:hover .menu-price,
-    .menu-card.active .menu-price {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+     .menu-price { opacity: 0;
+       transform: translateY(10px);
+       background: #6b4a32;
+        color: #fff; padding: 10px;
+         border-radius: 12px; 
+         font-weight: bold; 
+         transition: all 0.4s ease;
+         } 
+         /* HOVER / CLICK */
+          .menu-card:hover
+           { transform: translateY(-10px); } 
+           .menu-card:hover 
+           .menu-price,
+            .menu-card.active
+             .menu-price
+              { opacity: 1; 
+              transform: translateY(0); }
     /* BEST SELLER BADGE */
-    .badge {
-      position: absolute;
+     .badge { position: absolute; 
       top: 12px;
-      left: 12px;
-      background: linear-gradient(135deg, #c49b63, #9c6b30);
-      color: #fff;
-      font-size: 12px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-weight: bold;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    }
+       left: 12px; 
+       background: linear-gradient(135deg, #c49b63, #9c6b30); 
+       color: #fff; 
+       font-size: 12px; 
+       padding: 6px 12px;
+        border-radius: 20px; 
+       font-weight: bold; 
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); }
+   /* ===== MENU GRID FIX & ENHANCEMENT ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.menu-card {
+  background: #fffaf3;
+  border-radius: 20px;
+  padding: 18px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.menu-card h3 {
+  margin: 15px 0 10px;
+  color: #5a3e2b;
+  font-size: 17px;
+}
+
+.menu-price {
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  background: linear-gradient(135deg,#6b4a32,#8b5a2b);
+  color: #fff;
+  padding: 10px;
+  border-radius: 14px;
+  font-weight: bold;
+  transition: all 0.35s ease;
+}
+
+.menu-card:hover .menu-price {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BADGE LEBIH PREMIUM */
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: linear-gradient(135deg,#d4a373,#b07a2a);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
 
     /* TESTIMONI */
 .testimonial-section {
@@ -481,39 +537,64 @@
   opacity: 1;
   transform: translateX(0);
 }
+/* ===== HAMBURGER SLIDE DARI KANAN (KECIL) ===== */
+@media (max-width: 768px) {
 
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 12px 18px;
-      }
+  .hamburger {
+    display: block;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
 
-      .nav-links {
-        position: fixed;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 65px);
-        background: linear-gradient(135deg, #a47149, #d2b48c);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 25px;
-        display: none;
-      }
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -260px;
+    width: 240px;
+    background: linear-gradient(135deg, #a47149, #d2b48c);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 0 0 0 18px;
+    transition: right 0.35s ease;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.25);
+    z-index: 1000;
+  }
 
-      .nav-links.active {
-        display: flex;
-      }
+  .nav-links.active {
+    right: 0;
+  }
 
-      .nav-links a {
-        font-size: 20px;
-        padding: 12px 20px;
-      }
+  .nav-links a {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
 
-      .hamburger {
-        display: block;
-      }
-    }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.25);
+  }
+}
+
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
     @media (max-width: 768px) {
       .hero-text h1 {
@@ -636,87 +717,88 @@
 
   <!-- MENU -->
   <section class="menu-section" id="menu">
-    <h1>Menu Kami</h1>
+  <h1>Menu Kami</h1>
 
-    <div class="menu-grid">
+  <div class="menu-grid">
 
-      <div class="menu-card best">
-        <img src="original.jpeg" alt=" roti maryam riginal">
-        <span class="badge">Best Seller</span>
-        <h3> Roti Maryam Original</h3>
-        <div class="menu-price">Rp 5.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="bs.coklat.jpeg" alt=" roti maryam rasa Coklat">
-        <h3> Roti maryam rasa Coklat</h3>
-        <div class="menu-price">Rp 6.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="keju.jpeg" alt=" roti maryam rasa Keju">
-        <h3> Roti maryam rasa Keju</h3>
-        <div class="menu-price">Rp 6.000</div>
-      </div>
-
-      <div class="menu-card best">
-        <img src="coklat keju.jpeg" alt=" roti maryam rasa Coklat Keju">
-        <span class="badge">Best Seller</span>
-        <h3> Roti maryam rasa Coklat Keju</h3>
-        <div class="menu-price">Rp 7.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="kurma.jpeg" alt=" roti maryam rasa Kurma">
-        <h3> Roti maryam rasa Kurma</h3>
-        <div class="menu-price">Rp 8.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="ayam.jpeg" alt=" roti maryam rasa Ayam">
-        <h3> Roti maryam rasa Ayam</h3>
-        <div class="menu-price">Rp 8.000</div>
-      </div>
-
-      <div class="menu-card best">
-        <img src="rmckm.jpeg" alt=" roti maryam rasa Coklat Keju Mozarella">
-        <span class="badge">Best Seller</span>
-        <h3> Roti maryam rasa Coklat Keju Mozarella</h3>
-        <div class="menu-price">Rp 12.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="fg.jpeg" alt=" roti maryam Frozen Original">
-        <h3> Roti maryam Frozen Original</h3>
-        <div class="menu-price">Rp 12.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="frozen coklat.jpeg" alt=" roti maryam Frozen Coklat">
-        <h3>Roti maryam Frozen Coklat</h3>
-        <div class="menu-price">Rp 15.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="frozen keju.jpeg" alt=" roti maryam Frozen Keju">
-        <h3>Roti maryam Frozen Keju</h3>
-        <div class="menu-price">Rp 15.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="frozen keju coklat.jpeg" alt=" roti maryam Frozen Keju Coklat">
-        <h3> Roti maryam Frozen Keju Coklat</h3>
-        <div class="menu-price">Rp 18.000</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="frozen kurma.jpeg" alt=" roti maryam Frozen Kurma">
-        <h3>Roti maryamFrozen Kurma</h3>
-        <div class="menu-price">Rp 18.000</div>
-      </div>
-
+    <div class="menu-card best">
+      <img src="original.jpeg">
+      <span class="badge">Best Seller</span>
+      <h3>Roti Maryam Original</h3>
+      <div class="menu-price">Rp 5.000</div>
     </div>
-  </section>
+
+    <div class="menu-card">
+      <img src="bs.coklat.jpeg">
+      <h3>Roti Maryam Coklat</h3>
+      <div class="menu-price">Rp 6.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="keju.jpeg">
+      <h3>Roti Maryam Keju</h3>
+      <div class="menu-price">Rp 6.000</div>
+    </div>
+
+    <div class="menu-card best">
+      <img src="coklat keju.jpeg">
+      <span class="badge">Best Seller</span>
+      <h3>Coklat Keju</h3>
+      <div class="menu-price">Rp 7.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="kurma.jpeg">
+      <h3>Kurma</h3>
+      <div class="menu-price">Rp 8.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="ayam.jpeg">
+      <h3>Ayam</h3>
+      <div class="menu-price">Rp 8.000</div>
+    </div>
+
+    <div class="menu-card best">
+      <img src="rmckm.jpeg">
+      <span class="badge">Best Seller</span>
+      <h3>Coklat Keju Mozarella</h3>
+      <div class="menu-price">Rp 12.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="fg.jpeg">
+      <h3>Frozen Original</h3>
+      <div class="menu-price">Rp 12.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="frozen coklat.jpeg">
+      <h3>Frozen Coklat</h3>
+      <div class="menu-price">Rp 15.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="frozen keju.jpeg">
+      <h3>Frozen Keju</h3>
+      <div class="menu-price">Rp 15.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="frozen keju coklat.jpeg">
+      <h3>Frozen Keju Coklat</h3>
+      <div class="menu-price">Rp 18.000</div>
+    </div>
+
+    <div class="menu-card">
+      <img src="frozen kurma.jpeg">
+      <h3>Frozen Kurma</h3>
+      <div class="menu-price">Rp 18.000</div>
+    </div>
+
+  </div>
+</section>
+
   <!-- TESTIMONI -->
   <section class="testimonial-section" id="testimoni">
     <h2>💬 Testimoni Pelanggan</h2>
@@ -811,7 +893,7 @@
   </div>
 
   <div class="footer-bottom">
-    © 2026 Roti Maryam Istiqomah
+   
   </div>
 </footer>
 
@@ -823,33 +905,29 @@
   <span class="wa-tooltip">Chat Kami</span>
   <i class="fab fa-whatsapp"></i>
 </a>
-
-  <script>
-    document.querySelectorAll('.menu-card').forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('active');
-      });
-    });
-  </script>
 <script>
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
+  const overlay = document.getElementById("menuOverlay");
 
-  hamburger.onclick = () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("hide");
-  };
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.add("active");
+    overlay.classList.add("active");
+  });
 
-  // Supaya hamburger muncul lagi saat klik menu
+  overlay.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
-      hamburger.classList.remove("hide");
+      overlay.classList.remove("active");
     });
   });
 </script>
 
-  
 </body>
 
 </html>
