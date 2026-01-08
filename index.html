@@ -579,6 +579,19 @@
     background: rgba(255,255,255,0.25);
   }
 }
+.hamburger {
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* hamburger hilang saat menu aktif */
+.hamburger.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 
 .menu-overlay {
@@ -649,6 +662,115 @@
         width: 90%;
       }
     }
+    /* ===== FIX HAMBURGER DROPDOWN KE BAWAH ===== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;              /* MUNCUL DI BAWAH HAMBURGER */
+    right: 15px;
+    width: 200px;
+    background: linear-gradient(135deg, #a47149, #d2b48c);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 16px;
+    gap: 10px;
+
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    animation: dropdown 0.25s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.25);
+  }
+}
+/* ===== HAMBURGER DROPDOWN + ANIMASI DARI KIRI ===== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;              /* tepat di bawah hamburger */
+    right: 15px;
+    width: 200px;
+    background: linear-gradient(135deg, #a47149, #d2b48c);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px;
+    border-radius: 16px;
+    gap: 10px;
+
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* ITEM MENU */
+  .nav-links li {
+    width: 100%;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideLeft 0.35s ease forwards;
+  }
+
+  /* STAGGER EFFECT */
+  .nav-links li:nth-child(1) { animation-delay: 0.05s; }
+  .nav-links li:nth-child(2) { animation-delay: 0.1s; }
+  .nav-links li:nth-child(3) { animation-delay: 0.15s; }
+  .nav-links li:nth-child(4) { animation-delay: 0.2s; }
+  .nav-links li:nth-child(5) { animation-delay: 0.25s; }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.25);
+  }
+}
+
+/* ANIMASI TEKS DARI KIRI */
+@keyframes slideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -656,21 +778,21 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="nav-left">
-      <img src="logo.jpeg" class="logo-img">
-      <span class="logo-text">Roti Maryam Istiqomah</span>
-    </div>
+  <div class="nav-left">
+    <img src="logo.jpeg" class="logo-img">
+    <span class="logo-text">Roti Maryam Istiqomah</span>
+  </div>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#testimoni">Testimoni</a></li>
-      <li><a href="#footer">Kontak</a></li>
-    </ul>
+  <div class="hamburger" id="hamburger">☰</div>
 
-    <div class="hamburger" id="hamburger">☰</div>
-  </nav>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+    <li><a href="#footer">Kontak</a></li>
+  </ul>
+</nav>
 
   <!-- HOME -->
   <section class="hero" id="home">
@@ -908,22 +1030,16 @@
 <script>
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
-  const overlay = document.getElementById("menuOverlay");
 
   hamburger.addEventListener("click", () => {
-    navLinks.classList.add("active");
-    overlay.classList.add("active");
-  });
-
-  overlay.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    overlay.classList.remove("active");
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("hide");
   });
 
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
-      overlay.classList.remove("active");
+      hamburger.classList.remove("hide");
     });
   });
 </script>
